@@ -9,6 +9,9 @@ const PORT = 3000;
 app.use(express.json())
 app.use(logger("dev"))
 
+const usersRouter = require("./routes/users/user-router")
+app.use("/api/users", usersRouter)
+
 app.listen(PORT, () => {
     console.log(`Server is listening on PORT: ${PORT}`);
     connectToMongoDB();
