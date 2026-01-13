@@ -12,6 +12,9 @@ app.use(logger("dev"))
 const usersRouter = require("./routes/users/user-router")
 app.use("/api/users", usersRouter)
 
+const eventRouter = require("./routes/events/event-router")
+app.use("/api/events", eventRouter)
+
 app.listen(PORT, () => {
     console.log(`Server is listening on PORT: ${PORT}`);
     connectToMongoDB();
