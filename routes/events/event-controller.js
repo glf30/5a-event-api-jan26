@@ -27,8 +27,18 @@ const createEvent = async (eventData) => {
     }
 }
 
+const updateEvent = async (id, eventData) => {
+    try {
+        const updatedEvent = await Event.findByIdAndUpdate(id, eventData, { new: true })
+        return updatedEvent
+    } catch (error) {
+        throw error
+    }
+}
+
 module.exports = {
     createEvent,
     getEvents,
-    getEventByID
+    getEventByID,
+    updateEvent
 }
