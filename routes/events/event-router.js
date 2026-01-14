@@ -5,7 +5,7 @@ const { createEvent, getEvents, getEventByID } = require('./event-controller')
 
 router.get('/', async (req, res) => {
   try {
-    const events = await getEvents()
+    const events = await getEvents(req.query)
     res.json({
       message: 'success',
       payload: events
